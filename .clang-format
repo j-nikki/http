@@ -1,0 +1,16 @@
+ColumnLimit: 100
+IndentWidth: 4
+AllowShortLambdasOnASingleLine: All
+AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
+ReflowComments: true
+AlwaysBreakTemplateDeclarations: Yes
+BinPackParameters: true
+AlignConsecutiveMacros: AcrossEmptyLinesAndComments
+AllowShortCaseLabelsOnASingleLine: true
+BreakBeforeBraces: Custom
+AllowShortFunctionsOnASingleLine: true
+BraceWrapping:
+  AfterFunction: true
+  AfterNamespace: true
+  AfterClass: true
+  SplitEmptyRecord: false
