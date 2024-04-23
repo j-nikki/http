@@ -1,1 +1,6 @@
 build/
+server
+*.o
+*.a
+*.pem
+wolfssl/

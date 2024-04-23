@@ -50,4 +50,10 @@ constexpr inline void for_each_enum(Tpl &&tpl, F &&f) noexcept
 }
 
 struct empty {};
+
+template <auto X>
+using constant = std::integral_constant<decltype(X), X>;
+
+template <auto X>
+constexpr inline constant<X> constant_v;
 } // namespace util

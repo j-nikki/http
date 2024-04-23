@@ -456,10 +456,12 @@ template <util::string Name>
 struct file_proxy {
     CI route operator()() const noexcept
     {
+        using std::operator""sv;
         static constexpr auto sv  = std::string_view{Name};
         static constexpr auto ext = sv.substr(sv.find_last_of('.') + 1);
+        static constexpr auto it  = std::ranges::find(content_types, ext, &content_type::ext);
         alignas(std::max(alignof(std::string_view), 8uz)) static constexpr auto ct =
-            std::ranges::find(content_types, ext, &content_type::ext)->type;
+            it == content_types.end() ? "application/octet-stream"sv : it->type;
         static constexpr auto cstr = util::c_str<Name>;
         return static_impl({.ct = &ct}, {.fname = cstr.data()});
     }
